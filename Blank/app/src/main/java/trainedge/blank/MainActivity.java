@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ivLogo = (ImageView) findViewById(R.id.ivLogo);
+        ivLogo = (ImageView) findViewById(R.id.ivlogo);
         ivLogo.animate().setListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {

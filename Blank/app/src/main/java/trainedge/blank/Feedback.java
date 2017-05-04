@@ -49,7 +49,7 @@ public class Feedback extends AppCompatActivity implements View.OnClickListener,
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         String email = s.toString();
         if (email.isEmpty() || email.length() < 10 || !email.contains("@") || !email.contains(".com")) {
-            ermail.setError("Please give a correct email address.");
+            ermail.setError("oliostuffs@gmail.com");
         }
     }
 
@@ -66,7 +66,7 @@ public class Feedback extends AppCompatActivity implements View.OnClickListener,
             return;
         }
         if (!str2.contains("@") || str2.isEmpty() || str2.length() < 10) {
-            ermail.setError("Please enter a valid email address.");
+            ermail.setError("oliostuffs@gmail.com");
             return;
         }
         Intent emailint = new Intent(Intent.ACTION_SEND);

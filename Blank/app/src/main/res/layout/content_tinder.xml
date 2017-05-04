@@ -10,10 +10,11 @@
 
     <WebView
         android:id="@+id/wbTinder"
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="380dp"
+        android:layout_height="499dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="7dp"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        tools:layout_editor_absoluteX="4dp" />
 </android.support.constraint.ConstraintLayout>

@@ -19,15 +19,20 @@ public class ShareActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
-        mShareButton = (Button) findViewById(R.id.share_button);
+        mShareButton = (Button) findViewById(R.id.btnupload);
         mShareButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         makefacebookPost();
-
         makeGooglePlusPost();
+        maketwitterPost();
+        maketinderPost();
+        makeTimberPost();
+        makeRedditPost();
+        makeInstaPost();
+
     }
 
     private void makeGooglePlusPost() {
@@ -37,12 +42,57 @@ public class ShareActivity extends AppCompatActivity implements View.OnClickList
                 .setContentUrl(Uri.parse("https://developers.google.com/+/web/snippet/examples/restaurant"))
                 .getIntent();
 
-        startActivityForResult(shareIntent, 0);
+        startActivityForResult(shareIntent, 3);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==32){
+            makefacebookPost();
+        }
     }
 
     private void makefacebookPost() {
-       /* ShareLinkContent content = new ShareLinkContent.Builder()
+        ShareLinkContent content = new ShareLinkContent.Builder()
                 .setContentUrl(Uri.parse("https://developers.facebook.com"))
-                .build();*/
+                .build();
     }
+
+    private void maketwitterPost() {
+      /*  ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://www.twitter.com"))
+                .build();*/
+        Intent shareIntent = new PlusShare.Builder(this)
+                .setType("text/plain")
+                .setText("just set your status in twitter")
+                .setContentUrl(Uri.parse("https://www.twitter.com"))
+                .getIntent();
+        startActivityForResult(shareIntent, 0);
+    }
+
+    private void makeInstaPost() {
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://www.Instagram.com"))
+                .build();
+    }
+
+    private void maketinderPost() {
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://www.gotinder.com"))
+                .build();
+    }
+
+    private void makeTimberPost() {
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://www.Tumbler.com"))
+                .build();
+    }
+
+    private void makeRedditPost() {
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://www.Reddit.com"))
+                .build();
+    }
+
 }

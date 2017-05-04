@@ -21,6 +21,14 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_activity__drawer"
-        app:menu="@menu/activity__drawer_drawer" />
+        app:menu="@menu/activity__drawer_drawer" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="TextView" />
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
